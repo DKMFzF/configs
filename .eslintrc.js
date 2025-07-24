@@ -23,16 +23,13 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
-    // Базовые правила
     'no-var': 'error',
     'no-unused-vars': 'error',
     eqeqeq: ['error', 'always'],
     'default-case': 'error',
     
-    // Правила для console.log
     'no-console': ['error', { allow: ['warn', 'error'] }],
     
-    // Стиль именования
     'camelcase': ['error', { 
       properties: 'always',
       ignoreDestructuring: false,
@@ -59,12 +56,11 @@ module.exports = {
         format: ['PascalCase'],
         custom: {
           regex: '^I[A-Z]',
-          match: false, // Запрещаем префикс I для интерфейсов
+          match: false,
         },
       },
     ],
 
-    // Форматирование
     'indent': ['error', 2],
     'max-len': ['error', { 
       code: 120,
@@ -85,19 +81,17 @@ module.exports = {
       allowTemplateLiterals: true,
     }],
 
-    // React правила
     'react/jsx-pascal-case': ['error', {
       allowAllCaps: false,
       ignore: [],
     }],
     'react/react-in-jsx-scope': 'off',
 
-    // Комментарии
     'spaced-comment': ['error', 'always', {
       markers: ['/'],
       exceptions: ['-', '+'],
     }],
-    'capitalized-comments': ['off'], // Отключаем проверку заглавных букв
+    'capitalized-comments': ['off'],
     'multiline-comment-style': ['error', 'separate-lines'],
   },
   overrides: [
@@ -107,7 +101,7 @@ module.exports = {
         jest: true,
       },
       rules: {
-        'max-len': ['error', { code: 150 }], // Разрешаем более длинные строки в тестах
+        'max-len': ['error', { code: 150 }],
       },
     },
     {
@@ -122,7 +116,7 @@ module.exports = {
       version: 'detect',
     },
     'import/resolver': {
-      typescript: {}, // Для корректной работы с TypeScript путями
+      typescript: {},
     },
   },
 };
